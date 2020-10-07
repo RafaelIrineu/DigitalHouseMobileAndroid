@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">calculoSalario</string>
+    <string name="resultado">R$ %d</string>
+</resources>
