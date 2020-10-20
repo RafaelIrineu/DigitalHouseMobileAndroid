@@ -19,13 +19,13 @@
         app:counterEnabled="true"
         app:counterMaxLength="30"
         app:startIconDrawable="@drawable/ic_alternate_email_24px"
-        app:startIconContentDescription="Email">
+        app:startIconContentDescription="Email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            />
+            android:inputType="textPassword" />
 
         <ImageView
             android:layout_width="100dp"
@@ -35,5 +35,23 @@
             android:layout_gravity="center"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/textButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="Enviar"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/textButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Enviar"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        style="?attr/materialButtonOutlinedStyle"/>
 
 </LinearLayout>

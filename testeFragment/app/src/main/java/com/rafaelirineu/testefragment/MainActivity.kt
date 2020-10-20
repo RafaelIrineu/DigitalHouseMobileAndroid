@@ -16,13 +16,13 @@ class MainActivity : AppCompatActivity() {
 
         btnAdicionaFragmentA.setOnClickListener {
             val transaction = manager.beginTransaction()
-            transaction.add(R.id.fragmentContainer, MeuFragment())
+            transaction.replace(R.id.fragmentContainer, MeuFragment())
             transaction.commit()
         }
 
         btnAdicionaFragmentB.setOnClickListener {
             val transaction = manager.beginTransaction()
-            transaction.add(R.id.fragmentContainer, MeuOutroFragment())
+            transaction.replace(R.id.fragmentContainer, MeuOutroFragment())
             transaction.commit()
         }
     }
