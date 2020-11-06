@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val alterarTexto = Observer<Int> {
+        Log.i(TAG, "alterarTexto")
         _texto.text = it.toString()
     }
 
