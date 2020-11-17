@@ -12,8 +12,7 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_detalheFragment2"
-            app:destination="@id/detalheFragment"
-            app:enterAnim="@android:anim/slide_in_left" />
+            app:destination="@id/detalheFragment" />
     </fragment>
     <fragment
         android:id="@+id/detalheFragment"
