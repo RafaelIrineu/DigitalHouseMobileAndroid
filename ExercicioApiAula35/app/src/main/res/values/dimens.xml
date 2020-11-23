@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="categoryTitleSize">25sp</dimen>
+    <dimen name="categoryMarginStart">40dp</dimen>
+    <dimen name="recyclerViewMargin">10dp</dimen>
+</resources>
