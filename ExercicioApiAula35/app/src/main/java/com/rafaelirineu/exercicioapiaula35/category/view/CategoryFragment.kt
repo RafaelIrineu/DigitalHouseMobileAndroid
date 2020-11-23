@@ -11,6 +11,8 @@ import com.rafaelirineu.exercicioapiaula35.R
 
 class CategoryFragment : Fragment() {
 
+    private lateinit var _categoryAdapter: CategoryAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -22,6 +24,12 @@ class CategoryFragment : Fragment() {
 
         val categoryRecycler = view.findViewById<RecyclerView>(R.id.recyclerViewFragmentCategory)
         val viewManager = LinearLayoutManager(view.context)
+
+        categoryRecycler.apply{
+            setHasFixedSize(true)
+            layoutManager = viewManager
+            adapter = _categoryAdapter
+        }
     }
 
 }
