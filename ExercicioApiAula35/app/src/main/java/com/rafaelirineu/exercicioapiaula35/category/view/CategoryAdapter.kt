@@ -23,5 +23,4 @@ class CategoryAdapter(private val _category: MutableList<String>,
         holder.bind(item)
         holder.itemView.setOnClickListener {_listener(item) }
     }
-
 }
