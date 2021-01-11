@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/colorPrimary"
+    tools:context=".LoginActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textColorHint="@color/textPrimary"
+        app:boxBackgroundColor="@color/textPrimary"
+        app:boxStrokeColor="@color/textPrimary"
+        app:hintTextColor="@color/textPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_email_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/totalTranslucent"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/textPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Password"
+        android:textColorHint="@color/textPrimary"
+        app:boxBackgroundColor="@color/textPrimary"
+        app:boxStrokeColor="@color/textPrimary"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/textPrimary"
+        app:hintTextColor="@color/textPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/totalTranslucent"
+            android:inputType="textPassword"
+            android:textColor="@color/textPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:checked="false"
+        android:text="Manter-me conectado"
+        android:textColor="@color/textPrimary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/totalTranslucent"
+        android:text="Login"
+        app:cornerRadius="5dp"
+        app:strokeColor="@color/textPrimary"
+        app:strokeWidth="1dp" />
+
+</LinearLayout>
