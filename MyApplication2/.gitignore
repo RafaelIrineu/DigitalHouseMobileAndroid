@@ -1,6 +1,0 @@
-package com.rafaelirineu.desafiowebservices.viewmodel
-
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.liveData
-import com.rafaelirineu.desafiowe
