@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "931659926402",
+    "firebase_url": "https://aula46-2-default-rtdb.firebaseio.com",
+    "project_id": "aula46-2",
+    "storage_bucket": "aula46-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931659926402:android:ff24a541b558108b9b1d9b",
+        "android_client_info": {
+          "package_name": "com.example.aula46_exercicio2firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931659926402-7rda5fbgkkn3r8ijmsp199u87k7q5tbo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN_JLGEXFvuedY6VkxYKxDiBgfbNiggAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931659926402-7rda5fbgkkn3r8ijmsp199u87k7q5tbo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
