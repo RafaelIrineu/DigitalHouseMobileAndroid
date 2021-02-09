@@ -1,7 +1,6 @@
 package com.example.testelocaldatetime
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -17,18 +16,22 @@ class MainActivity : AppCompatActivity() {
     lateinit var isTomorrow: String
     lateinit var today: String
 
-    val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-    val calendar = Calendar.getInstance()
+    private val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+    private val calendar: Calendar = Calendar.getInstance()
 
     @SuppressLint("WrongViewCast")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
+
+        var dayComparePreference = getSharedPreferences(DATE_PREFS, MODE_PRIVATE)
+
         val btn2 = findViewById<Button>(R.id.button2)
 
         today = dateFormat.format(calendar.time)
+
+        today = dayComparePreference.getString(DATE_PREFS, "").toString()
 
         if (isTomorrow.compareTo(today) == 1) {
             //dia de hoje é maior que o de ontem
@@ -40,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         btn2.setOnClickListener {
 
-            isTomorrow = "2021-02-10"
+            isTomorrow = dateFormat.format(calendar.time)
 
             Log.d("Data", isTomorrow.compareTo(today).toString())
             Log.d("Data", today.compareTo(isTomorrow).toString())
@@ -50,15 +53,14 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        val keepConnectedPreference = getSharedPreferences(KEEP_CONNECTED_PREFS, MODE_PRIVATE)
-        keepConnectedPreference.edit()
-                .putString(DATA_PREFS, today)
+        dayComparePreference.edit()
+                .putString(DATE_PREFS, today)
                 .apply()
     }
 
     companion object {
-        const val DATA_PREFS = "DATA"
-        const val KEEP_CONNECTED_PREFS = "SAVE_LOGIN_PREFERENCES"
+        const val DATE_PREFS = "DATE"
+        const val KEEP_CONNECTED_PREFS = "GET_DATE_FIRST_LOGIN"
     }
 }
 
