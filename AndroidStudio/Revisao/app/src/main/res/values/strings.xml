@@ -2,4 +2,12 @@
     <string name="app_name">Revisao1</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="log_in">Log In</string>
+    <string name="or">or</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="repeat_password">repeat password</string>
+    <string name="i_agree">I Agree</string>
+    <string name="aquela_revisada">Aquela revisada</string>
 </resources>

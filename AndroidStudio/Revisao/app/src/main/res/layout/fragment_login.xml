@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:hint="username"
+        android:hint="Usuário"
         app:errorEnabled="true"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
@@ -27,8 +27,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextUserNameLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -40,7 +39,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:hint="password"
+        android:hint="Senha"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
@@ -65,10 +64,10 @@
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:text="Log In"
         android:textAllCaps="false"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@id/txtor"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,9 +77,9 @@
         android:id="@+id/txtor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:text="or"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/btnSignUpLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -93,7 +92,7 @@
         android:layout_marginBottom="16dp"
         android:text="Sign Up"
         android:textAllCaps="false"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
