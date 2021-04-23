@@ -26,36 +26,42 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var dayComparePreference = getSharedPreferences(DATE_PREFS, MODE_PRIVATE)
+        today = dayComparePreference.getString(KEEP_CONNECTED_PREFS, "").toString()
 
-        val btn2 = findViewById<Button>(R.id.button2)
 
-        today = dateFormat.format(calendar.time)
 
-        today = dayComparePreference.getString(DATE_PREFS, "").toString()
+            val isDay = dateFormat.format(calendar.time)
 
-        if (isTomorrow.compareTo(today) == 1) {
-            //dia de hoje é maior que o de ontem
-            val validador = true
-        } else {
-            //dia de hoje é igual ou menor que o de ontem
-            val validador = false
-        }
+            if (isDay.compareTo(today) == 1) {
+                dayComparePreference.edit()
+                    .putString(KEEP_CONNECTED_PREFS, isDay)
+                    .apply()
+                Toast.makeText(this,"Foi ontem",Toast.LENGTH_LONG).show()
 
-        btn2.setOnClickListener {
+            }
 
-            isTomorrow = dateFormat.format(calendar.time)
 
-            Log.d("Data", isTomorrow.compareTo(today).toString())
-            Log.d("Data", today.compareTo(isTomorrow).toString())
 
-            Toast.makeText(this, today, Toast.LENGTH_LONG).show()
-            Toast.makeText(this, isTomorrow, Toast.LENGTH_LONG).show()
 
-        }
 
-        dayComparePreference.edit()
-                .putString(DATE_PREFS, today)
-                .apply()
+
+
+
+
+
+//        btn2.setOnClickListener {
+//
+//            isTomorrow = dateFormat.format(calendar.time)
+//
+//            Log.d("Data", isTomorrow.compareTo(today).toString())
+//            Log.d("Data", today.compareTo(isTomorrow).toString())
+//
+//            Toast.makeText(this, today, Toast.LENGTH_LONG).show()
+//            Toast.makeText(this, isTomorrow, Toast.LENGTH_LONG).show()
+//
+//        }
+
+
     }
 
     companion object {
