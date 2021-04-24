@@ -1,6 +1,6 @@
 package com.example.revisao1
 
 interface IMudarTab {
-    fun mudarTab(){
+    fun mudarTab(posicaoAtual: Int){
     }
 }

@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 
+const val LOGIN_FRAGMENT = 0
+const val SIGN_UP_FRAGMENT = 1
+
 class MainActivity : AppCompatActivity(), IMudarTab {
     private val tab by lazy { findViewById<TabLayout>(R.id.layoutLogin)}
     //o by lazy espera a view ser criada para atribuir, senão o código quebra
@@ -24,8 +27,16 @@ class MainActivity : AppCompatActivity(), IMudarTab {
         )
     }
 
-    override fun mudarTab(){
-        val tabNova = tab.getTabAt(1)
+    override fun mudarTab(posicaoAtual: Int){
+        var novaPosicao = definePosicao(posicaoAtual)
+        val tabNova = tab.getTabAt(novaPosicao)
         tabNova?.select()
     }
+
+    private fun definePosicao(posicaoAtual: Int) =
+        if (posicaoAtual == LOGIN_FRAGMENT) {
+        SIGN_UP_FRAGMENT
+        } else {
+        LOGIN_FRAGMENT
+        }
 }

@@ -65,7 +65,7 @@ class LoginFragment : Fragment() {
             })
 
         btnSignUpLogin.setOnClickListener{
-            mudarTabListener.mudarTab()
+            mudarTabListener.mudarTab(LOGIN_FRAGMENT)
         }
 
         return view
@@ -89,7 +89,6 @@ class LoginFragment : Fragment() {
         //assim: private lateinit var mudarTabListener: IMudarTab
         //como vai inicializar a variável depois, colocar lateinit
         //agora precisamos ouvir o botão
-
     }
 
     fun validaEntradas(view: View): Boolean {
