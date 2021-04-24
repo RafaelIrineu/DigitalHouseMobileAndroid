@@ -23,7 +23,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         //primeiro de tudo associar a view! não esquecer do return no fim e tirar o return padrão!!
         minhaView = inflater.inflate(R.layout.fragment_login, container, false)
         val btnLogin = minhaView.findViewById<MaterialButton>(R.id.btnLogin)

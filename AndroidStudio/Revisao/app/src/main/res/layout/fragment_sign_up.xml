@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="Usuário"
         app:boxCornerRadiusBottomEnd="20dp"
@@ -32,12 +32,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtPasswordSignUp"
+        android:id="@+id/txtTextPasswordSignUp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:hint="Senha"
         app:boxCornerRadiusBottomEnd="20dp"
@@ -57,12 +57,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtRepeatPasswordSignUp"
+        android:id="@+id/txtTextRepeatPasswordSignUp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:hint="Repetir senha"
         app:boxCornerRadiusBottomEnd="20dp"
@@ -71,7 +71,7 @@
         app:boxCornerRadiusTopStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtPasswordSignUp">
+        app:layout_constraintTop_toBottomOf="@id/txtTextPasswordSignUp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtTextRepeatPasswordSignUp"
@@ -82,15 +82,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
+        android:id="@+id/checkboxSignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:text="I Agree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtRepeatPasswordSignUp" />
+        app:layout_constraintTop_toBottomOf="@id/txtTextRepeatPasswordSignUp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignUp"
@@ -98,7 +99,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:text="Sign Up"
         android:textAllCaps="false"
         android:textSize="16sp"
