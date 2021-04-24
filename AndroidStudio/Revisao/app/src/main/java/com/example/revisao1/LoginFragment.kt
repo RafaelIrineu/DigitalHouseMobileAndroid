@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.fragment_login.view.*
 import kotlin.math.min
 
 class LoginFragment : Fragment() {
@@ -28,10 +29,12 @@ class LoginFragment : Fragment() {
         minhaView = inflater.inflate(R.layout.fragment_login, container, false)
         val btnLogin = minhaView.findViewById<MaterialButton>(R.id.btnLogin)
         val btnSignUpLogin = minhaView.findViewById<Button>(R.id.btnSignUpLogin)
+        var edtPassword = minhaView.findViewById<TextInputEditText>(R.id.editTextPasswordLogin)
 
         btnLogin.setOnClickListener {
             if (validaEntradas(minhaView)) {
                 Toast.makeText(minhaView.context, "Login realizado", Toast.LENGTH_LONG).show()
+                edtPassword.setText("")
             }
         }
 
@@ -92,7 +95,7 @@ class LoginFragment : Fragment() {
         //agora precisamos ouvir o botão
     }
 
-    fun validaEntradas(view: View): Boolean {
+        private fun validaEntradas(view: View): Boolean {
         var resultado = true
 
         val edtUserName = view.findViewById<TextInputEditText>(R.id.editTextUserNameLogin)

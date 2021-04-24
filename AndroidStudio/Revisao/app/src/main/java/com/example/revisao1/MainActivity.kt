@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.textfield.TextInputEditText
 
 const val LOGIN_FRAGMENT = 0
 const val SIGN_UP_FRAGMENT = 1
