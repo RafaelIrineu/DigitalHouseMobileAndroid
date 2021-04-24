@@ -13,30 +13,31 @@ import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import org.w3c.dom.Text
+import kotlin.math.min
 
 class LoginFragment : Fragment() {
 
     private lateinit var mudarTabListener: IMudarTab
+    private lateinit var minhaView: View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         //primeiro de tudo associar a view! não esquecer do return no fim e tirar o return padrão!!
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
-        val btnLogin = view.findViewById<MaterialButton>(R.id.btnLogin)
-        val btnSignUpLogin = view.findViewById<Button>(R.id.btnSignUpLogin)
+        minhaView = inflater.inflate(R.layout.fragment_login, container, false)
+        val btnLogin = minhaView.findViewById<MaterialButton>(R.id.btnLogin)
+        val btnSignUpLogin = minhaView.findViewById<Button>(R.id.btnSignUpLogin)
 
         btnLogin.setOnClickListener {
-            if (validaEntradas(view)) {
-                Toast.makeText(view.context, "Login realizado", Toast.LENGTH_LONG).show()
+            if (validaEntradas(minhaView)) {
+                Toast.makeText(minhaView.context, "Login realizado", Toast.LENGTH_LONG).show()
             }
         }
 
         //abaixo o código para fazer com que após dar o erro de campo vazio, ao começar a digitar
         //o erro seja escondido
-        view.findViewById<TextInputEditText>(R.id.editTextUserNameLogin)
+        minhaView.findViewById<TextInputEditText>(R.id.editTextUserNameLogin)
             .addTextChangedListener(object :
                 TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
@@ -46,11 +47,11 @@ class LoginFragment : Fragment() {
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    view.findViewById<TextInputLayout>(R.id.txtUserNameLogin).error = ""
+                    minhaView.findViewById<TextInputLayout>(R.id.txtUserNameLogin).error = ""
                 }
             })
 
-        view.findViewById<TextInputEditText>(R.id.editTextPasswordLogin)
+        minhaView.findViewById<TextInputEditText>(R.id.editTextPasswordLogin)
             .addTextChangedListener(object :
                 TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
@@ -60,7 +61,7 @@ class LoginFragment : Fragment() {
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    view.findViewById<TextInputLayout>(R.id.txtPasswordLogin).error = ""
+                    minhaView.findViewById<TextInputLayout>(R.id.txtPasswordLogin).error = ""
                 }
             })
 
@@ -68,7 +69,7 @@ class LoginFragment : Fragment() {
             mudarTabListener.mudarTab(LOGIN_FRAGMENT)
         }
 
-        return view
+        return minhaView
     }
 
     override fun onAttach(context: Context) {
@@ -108,5 +109,12 @@ class LoginFragment : Fragment() {
         }
 
         return resultado
+    }
+
+    fun usernameAlterado(username: String) {
+        val edtUserName = minhaView.findViewById<TextInputEditText>(R.id.editTextUserNameLogin)
+        edtUserName.setText(username)
+        val edtPassword = minhaView.findViewById<TextInputEditText>(R.id.editTextPasswordLogin)
+        edtPassword.requestFocus() //faz com que o foco seja na linha definida
     }
 }
